@@ -1,13 +1,266 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.expense-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ExpenseTracker Component */
+.expensetracker {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+/* Expense Component */
+.container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.yourbalance {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.income-expense {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: goldenrod;
+}
+
+.childs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.child1, .child2 {
+    display: inline-block;
+    width: 180px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    text-align: center;
+    outline: gainsboro;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.income {
+    color: green;
+}
+
+.expense {
+    color: red;
+}
+
+/* TransactionForm Component */
+.transactionform {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.newtransaction {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addincome {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.addexpense {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* TransactionHistory Component */
+.history {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.transactionhistory {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding-top: 15px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    border-bottom: 1px solid rgb(25, 1, 1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+button {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: red;
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .expense-container {
+        padding: 10px;
+    }
+
+    .expensetracker, .yourbalance, .income-expense, .newtransaction, .transactionhistory {
+        font-size: 1.5em;
+    }
+
+    .child1, .child2 {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    input[type="text"], input[type="number"], .addincome, .addexpense {
+        width: 100%;
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .expensetracker, .yourbalance, .income-expense, .newtransaction, .transactionhistory {
+        font-size: 1.2em;
+    }
+
+    .child1, .child2 {
+        width: 100%;
+        max-width: 150px;
+    }
+
+    input[type="text"], input[type="number"], .addincome, .addexpense {
+        width: 100%;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .expense-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .expensetracker {
+        font-size: 1.8em;
+        margin-left: 0;
+    }
+
+    .container {
+        margin-left: 0;
+    }
+
+    .yourbalance, .income-expense, .newtransaction, .transactionhistory {
+        font-size: 1.3em;
+    }
+
+    .childs {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .child1, .child2 {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .transactionform {
+        margin-left: 0;
+    }
+
+    input[type="text"], input[type="number"], .addincome, .addexpense {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .history {
+        margin-left: 0;
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    li {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 10px;
+    }
 }
